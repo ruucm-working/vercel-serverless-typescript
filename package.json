@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@notionhq/client": "^0.2.1",
     "@vercel/node": "^1.11.1",
     "typescript": "^4.3.5"
   }
