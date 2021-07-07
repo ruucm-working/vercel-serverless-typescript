@@ -29,7 +29,7 @@ export default async (req: NowRequest, res: NowResponse) => {
       },
     })
 
-    console.log("myPage", myPage)
+    console.log("myPage!", myPage)
     console.log("myPage.results[0].properties", myPage.results[0].properties)
 
     res.json({ myPage })
