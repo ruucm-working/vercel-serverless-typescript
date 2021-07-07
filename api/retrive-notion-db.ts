@@ -1,10 +1,11 @@
+import { allowCors } from "./../utils"
 import { NowRequest, NowResponse } from "@vercel/node"
 import { Client } from "@notionhq/client"
 
 const notion = new Client({ auth: process.env.NOTION_KEY })
 const databaseId = process.env.NOTION_DATABASE_ID
 
-export default async (req: NowRequest, res: NowResponse) => {
+const handler = async (req: NowRequest, res: NowResponse) => {
   const { query } = req
   const { id } = query
 
@@ -37,3 +38,5 @@ export default async (req: NowRequest, res: NowResponse) => {
     console.error(error)
   }
 }
+
+export default allowCors(handler)
